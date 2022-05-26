@@ -14,7 +14,7 @@ $karyawan = query("SELECT * FROM karyawan");
 </head>
 
 <body>
-  <h3> Daftar Karyawan</h3>
+  <h3> Daftar data Karyawan</h3>
 
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>

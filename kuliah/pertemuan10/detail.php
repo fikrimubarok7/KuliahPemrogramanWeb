@@ -27,7 +27,7 @@ $k = query("SELECT * FROM karyawan WHERE id = $id")
     <li>Nama: <?= $k['nama']; ?></li>
     <li>Email: <?= $k['email']; ?></li>
     <li>Jabatan: <?= $k['jabatan']; ?></li>
-    <li><a href="">ubah</a> | <a href=""></a>hapus</li>
+    <li><a href="">ubah</a> | <a href="">hapus</a></li>
     <li><a href="latihan3.php">Kembali ke daftar Karyawan</a></li>
   </ul>
 </body>

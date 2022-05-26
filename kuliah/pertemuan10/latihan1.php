@@ -13,7 +13,7 @@ $rows = [];
 while ($row = mysqli_fetch_assoc($result)) {
   $rows[] = $row;
 }
-// tampung ke variable mahasiswa
+// tampung ke variable karyawan
 $karyawan = $rows;
 ?>
 
