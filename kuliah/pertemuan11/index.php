@@ -1,6 +1,12 @@
 <?php
 require 'functions.php';
 $karyawan = query("SELECT * FROM karyawan");
+
+// Ketika tombol cari diklik
+if (isset($_POST['cari'])) {
+  $karyawan = cari($_POST['keyword']);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +25,11 @@ $karyawan = query("SELECT * FROM karyawan");
   <a href="tambah.php">Tambah Data Karyawan</a>
   <br><br>
 
+  <form action="" method="POST">
+    <input type="text" name="keyword" size="40" placeholder="Masukan Keyword Pencarian.." autocomplete="off" autofocus>
+    <button type="submit" name="cari">Cari!</button>
+  </form>
+  <br>
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
       <th>#</th>
@@ -27,6 +38,13 @@ $karyawan = query("SELECT * FROM karyawan");
       <th>Aksi</th>
     </tr>
 
+    <?php if (empty($karyawan)) :  ?>
+      <tr>
+        <td colspan="4">
+          <p>Data Karyawan tidak ditemukan!</p>
+        </td>
+      </tr>
+    <?php endif; ?>
     <?php $i = 1;
     foreach ($karyawan as $k) : ?>
       <tr>
