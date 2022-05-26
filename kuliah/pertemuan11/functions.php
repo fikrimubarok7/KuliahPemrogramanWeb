@@ -42,3 +42,33 @@ function tambah($data)
   mysqli_query($conn, $query) or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
 }
+
+function hapus($id)
+{
+  $conn = koneksi();
+  mysqli_query($conn, " DELETE FROM karyawan WHERE id =   $id") or die(mysqli_error($conn));
+  return mysqli_affected_rows($conn);
+}
+
+function ubah($data)
+{
+  $conn = koneksi();
+
+  $id = $data['id'];
+  $nama = htmlspecialchars($data['nama']);
+  $nip = htmlspecialchars($data['nip']);
+  $email = htmlspecialchars($data['email']);
+  $jabatan = htmlspecialchars($data['jabatan']);
+  $gambar = htmlspecialchars($data['gambar']);
+
+  $query = "UPDATE karyawan SET 
+            nama = '$nama',
+            nip  = '$nip',
+            email  = '$email',
+            jabatan  = '$jabatan',
+            gambar  = '$gambar'
+            WHERE id = $id ";
+
+  mysqli_query($conn, $query) or die(mysqli_error($conn));
+  return mysqli_affected_rows($conn);
+}
