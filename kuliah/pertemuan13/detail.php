@@ -28,7 +28,7 @@ $k = query("SELECT * FROM karyawan WHERE id = $id")
 <body>
   <h3>Detail Karyawan</h3>
   <ul>
-    <li><img src="img/<?= $k['gambar']; ?>" </li>
+    <li><img src="img/<?= $k['gambar']; ?>" width="250" </li>
     <li>NIP: <?= $k['nip']; ?></li>
     <li>Nama: <?= $k['nama']; ?></li>
     <li>Email: <?= $k['email']; ?></li>

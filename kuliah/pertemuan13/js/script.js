@@ -29,3 +29,16 @@ fetch('ajax/ajax_cari.php?keyword=' + keyword.values)
   .then((response) => (container.innerHTML = response));
 
 });   
+
+// Preview Image untuk tambah dan ubah 
+function previewImage(){
+  const gambar = document.querySelector('.gambar');
+  const imgPreview = domcument.querySelector('.img-preview');
+
+  const oFReader = new FileReader();
+  oFReader.readAsDataURL(gambar.files[0]);
+
+  oFReader.onload = function (oFREvent) {
+    imgPreview.src = oFREvent.target.result;
+  };
+}
